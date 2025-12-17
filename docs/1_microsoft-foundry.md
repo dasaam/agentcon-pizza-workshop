@@ -12,7 +12,7 @@ In this section, you will set up the Microsoft Foundry resource and deploy your 
 2. **Create a Microsoft Foundry Resource**  
    - Navigate to the [Microsoft Foundry](https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/overview) service.  
    - Click **Create a resource**.  
-   ![](./public/foundry/001.png)  
+   ![](/public/foundry/001.png)  
 
 ---
 
@@ -27,7 +27,7 @@ In this section, you will set up the Microsoft Foundry resource and deploy your 
    | **Region:** | Select **West US** (⚠️ Do not select another region) |  
    | **Project Name:** | `Pizza-Workshop` |  
 
-   ![](./public/foundry/002.png)  
+   ![](/public/foundry/002.png)  
 
 ---
 
@@ -41,20 +41,20 @@ In this section, you will set up the Microsoft Foundry resource and deploy your 
 5. **Open Microsoft Foundry**  
    - Navigate to [AI.Azure.com](https://ai.azure.com).  
    - You should now see the Microsoft Foundry projects linked to your subscription.  
-   ![](./public/foundry/003.png)  
+   ![](/public/foundry/003.png)  
    - Click on your project, e.g. **Pizza-Workshop**.  
 
 ---
 
 6. **Deploy a base model**  
    - In the project, go to **Model + endpoints**.  
-   ![](./public/foundry/004.png)  
+   ![](/public/foundry/004.png)  
    - Click **Deploy model** → **Deploy base model**.  
-   ![](./public/foundry/005.png)  
+   ![](/public/foundry/005.png)  
    - Select the model **gpt-4o** and click **Confirm**.  
-   ![](./public/foundry/006.png)  
+   ![](/public/foundry/006.png)  
    - Leave all other settings at their defaults and click **Deploy**.  
-   ![](./public/foundry/007.png)  
+   ![](/public/foundry/007.png)  
 
    This will make the model available in your project for use by your agents.  
 
@@ -62,7 +62,7 @@ In this section, you will set up the Microsoft Foundry resource and deploy your 
 
 7. **Test the model**  
    - Once deployment is complete, click **Open in Playground**.  
-   ![](./public/foundry/008.png)  
+   ![](/public/foundry/008.png)  
    - In the chat window, type:  
 
      ```

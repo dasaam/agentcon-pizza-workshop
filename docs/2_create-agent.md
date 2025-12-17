@@ -45,7 +45,7 @@ We’ll store secrets (such as your project connection string) in an environment
 
 Replace `https://<your-foundry-resource>.services.ai.azure.com/api/projects/<your-project-name>` with the actual values from your Microsoft Foundry project. 
 
-![](./public/foundry/foundry-project-string.png)  
+![](/public/foundry/foundry-project-string.png)  
 
 
 3. **Where to find your connection string:**

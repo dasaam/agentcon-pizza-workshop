@@ -1,6 +1,6 @@
 # Microsoft Foundry Agent Workshop 🚀  
 
-![](./public/banner.png)
+![](/public/banner.png)
 
 ## Workshop Overview  
 
