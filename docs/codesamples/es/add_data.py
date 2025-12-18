@@ -1,12 +1,12 @@
 import os
 from dotenv import load_dotenv
 
-# Azure SDK imports
+# Importaciones del SDK de Azure
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import FilePurpose
 
-# Load environment variables (expects PROJECT_CONNECTION_STRING in .env)
+# Cargar variables de entorno (espera PROJECT_CONNECTION_STRING en .env)
 load_dotenv(override=True)
 
 project_client = AIProjectClient(
@@ -26,7 +26,7 @@ print(f"Subiendo archivos desde {DOCS_DIR} ...")
 file_ids = []
 for fname in os.listdir(DOCS_DIR):
     fpath = os.path.join(DOCS_DIR, fname)
-    # skip directories and hidden files like .DS_Store
+    # omitir directorios y archivos ocultos como .DS_Store
     if not os.path.isfile(fpath) or fname.startswith('.'):
         continue
     uploaded = project_client.agents.files.upload_and_poll(

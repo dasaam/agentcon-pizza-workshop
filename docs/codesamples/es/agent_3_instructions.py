@@ -6,13 +6,13 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-# Creating the AIProjectClient
+# Creando el AIProjectClient
 project_client = AIProjectClient(
     endpoint=os.environ["PROJECT_CONNECTION_STRING"],
     credential=DefaultAzureCredential()
 )
 
-# Creating the agent
+# Creando el agente
 agent = project_client.agents.create_agent(
     model="gpt-4o",
     name="pizza-bot",
@@ -21,39 +21,39 @@ agent = project_client.agents.create_agent(
     temperature=0.7,
 )
 print(f"Agente creado, ID: {agent.id}")
-# Creating the thread
+# Creando el hilo
 thread = project_client.agents.threads.create()
 print(f"Hilo creado, ID: {thread.id}")
 
 try:
     while True:
-        # Get the user input
+        # Obtener la entrada del usuario
         user_input = input("Tú: ")
 
-        # Break out of the loop
+        # Salir del loop
         if user_input.lower() in ["salir", "terminar"]:
             break
 
-        # Add a message to the thread
+        # Agregar un mensaje al hilo
         message = project_client.agents.messages.create(
             thread_id=thread.id,
             role=MessageRole.USER,
             content=user_input
         )
 
-        # Process the agent run
+        # Procesar la ejecución del agente
         run = project_client.agents.runs.create_and_process(
             thread_id=thread.id,
             agent_id=agent.id
         )
 
-        # List messages and print the first text response from the agent
+        # Listar mensajes e imprimir la primera respuesta de texto del agente
         messages = project_client.agents.messages.list(thread_id=thread.id)
         first_message = next(iter(messages), None)
         if first_message:
             print(next((item["text"]["value"] for item in first_message.content if item.get("type") == "text"), "")) 
 
 finally:
-    # Clean up the agent when done
+    # Limpiar el agente al terminar
     project_client.agents.delete_agent(agent.id)
     print("Agente eliminado.")
